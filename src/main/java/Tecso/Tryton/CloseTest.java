@@ -1,5 +1,5 @@
 package Tecso.Tryton;
 
-public class LoginTest2 {
+public class CloseTest {
 
 }
