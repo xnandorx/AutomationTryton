@@ -1,11 +1,6 @@
 package TestRunner;
+
 import Tecso.Tryton.*;
-
-public class TestRunner {
-
-}
-
-
 import java.util.concurrent.TimeUnit;
 import org.junit.After;
 import org.junit.Before;
@@ -16,13 +11,15 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class TestLogin {
+
+public class TestRunner {
 	private WebDriver driver;
 	private LoginPO loginPage;
 	private CloseTest closeTest;
-	
+
+
 	@Test 
-	public void buenavidaSeLaCome() {
+	public void testLoginTrytonDemo() {
 		loginPage = new LoginPO (driver);
 		//WebDriverWait wait = new WebDriverWait(driver, 30);
 		closeTest = new CloseTest(driver);
