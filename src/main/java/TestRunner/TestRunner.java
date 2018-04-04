@@ -17,7 +17,6 @@ public class TestRunner {
 	private WebDriver driver;
 	private LoginPO loginPage;
 	private CloseTest closeTest;
-	
 
 	@Test 
 	public void testLogin() {
@@ -25,13 +24,9 @@ public class TestRunner {
 		closeTest = new CloseTest (driver);
 		
 		loginPage
-			.login("Automation", "tryton") 
-			.user() //Navigation
-			.data("Fernando","Auto", "tryton123", "fernando@gmail.com"); //Test Data
-		
-		closeTest
-			.close();
+			.login("Automation", "tryton"); 
 	}
+	
 	
 	@Test 
 	public void addUser() {
@@ -42,9 +37,6 @@ public class TestRunner {
 			.login("Automation", "tryton") 
 			.user() //Navigation
 			.data("Fernando","Auto", "tryton123", "fernando@gmail.com"); //Test Data
-		
-		closeTest
-			.close();
 	}
 	
 	
@@ -52,25 +44,23 @@ public class TestRunner {
 	public void modifyUser() {
 		loginPage = new LoginPO(driver);
 		closeTest = new CloseTest(driver);
+		
+		loginPage
+			.login("Automation", "tryton")
+			.modifyUser();
 	}
 	
-	@Test
-	public void addEntity() {
-		loginPage = new LoginPO(driver);
-		closeTest = new CloseTest(driver);
-	}
 	
 	@Test
-	public void deleteEntity() {
+	public void deleteUser() {
 		loginPage = new LoginPO(driver);
 		closeTest = new CloseTest(driver);
+		
+		loginPage
+		.login("Automation", "tryton")
+		.deleteUser();
 	}
 	
-	@Test
-	public void modifyEntity() {
-		loginPage = new LoginPO(driver);
-		closeTest = new CloseTest(driver);
-	}
 	
 
 	@Before
@@ -89,6 +79,8 @@ public class TestRunner {
 	
 	@After
 	public void teardDown() {
+		closeTest
+		.close();
 		driver.quit();
 	}
 	

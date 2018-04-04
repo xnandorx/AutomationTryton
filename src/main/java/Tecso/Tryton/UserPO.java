@@ -33,5 +33,17 @@ public class UserPO {
 		return new DataPO(driver);
 	}
 	
+	public UserPO modifyUser() {
+		System.out.println("Test Not Successfully created");
+		return this;
+	}
+		
+	public UserPO deleteUser() {
+		System.out.println("Test Not Successfully created");
+		return this;
+	}	
+	
+	
+	
 }
 

@@ -29,8 +29,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 	    driver.findElement(By.id("login-password")).clear();
 	    driver.findElement(By.id("login-password")).sendKeys("tryton");
 	    driver.findElement(By.id("login-password")).sendKeys(Keys.ENTER);
-		
+		System.out.println("Test testLogin Succesfull");
 	    return new UserPO (driver);
 	}
-		
+	
+
+	
 }

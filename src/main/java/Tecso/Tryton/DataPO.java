@@ -39,7 +39,7 @@ public class DataPO {
 	    driver.findElement(By.id("ui-id-13")).sendKeys(pass);
 	    driver.findElement(By.id("ui-id-16")).clear();
 	    driver.findElement(By.id("ui-id-16")).sendKeys(email);
-	    
+	    System.out.println("Test createUser Succesfull");
 	    
 	    
 	    return this;
