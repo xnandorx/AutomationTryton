@@ -17,7 +17,7 @@ public class TestRunner {
 	private WebDriver driver;
 	private LoginPO loginPage;
 	private CloseTest closeTest;
-
+	
 	@Test 
 	public void testLogin() {
 		loginPage = new LoginPO (driver);
@@ -26,7 +26,6 @@ public class TestRunner {
 		loginPage
 			.login("Automation", "tryton"); 
 	}
-	
 	
 	@Test 
 	public void addUser() {
@@ -38,7 +37,6 @@ public class TestRunner {
 			.user() //Navigation
 			.data("Fernando","Auto", "tryton123", "fernando@gmail.com"); //Test Data
 	}
-	
 	
 	@Test
 	public void modifyUser() {

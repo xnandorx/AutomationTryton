@@ -1,5 +1,7 @@
 package Tecso.Tryton;
 
+import java.util.NoSuchElementException;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -29,8 +31,22 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 	    driver.findElement(By.id("login-password")).clear();
 	    driver.findElement(By.id("login-password")).sendKeys("tryton");
 	    driver.findElement(By.id("login-password")).sendKeys(Keys.ENTER);
-		System.out.println("Test testLogin Succesfull");
-	    return new UserPO (driver);
+		
+	    boolean present;
+	    try {
+	       driver.findElement(By.id("user-preferences"));
+	       present = true;
+	    } catch (NoSuchElementException e) {
+	       present = false;
+	    }
+	    
+	    if (present = true) {
+	    	System.out.println("Test testLogin Salteño Succesfull");
+	    }else {
+	    	System.out.println("Test testLogin FAIL");
+	    }
+	    
+		return new UserPO (driver);
 	}
 	
 
