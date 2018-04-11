@@ -12,66 +12,40 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-
 public class TestRunner {
 	private WebDriver driver;
 	private LoginPO loginPage;
 	private CloseTest closeTest;
-	
 
 	@Test 
 	public void testLogin() {
 		loginPage = new LoginPO (driver);
 		closeTest = new CloseTest (driver);
-		
+		//Test
 		loginPage
-			.login("Automation", "tryton") 
-			.user() //Navigation
-			.data("Fernando","Auto", "tryton123", "fernando@gmail.com"); //Test Data
-		
-		closeTest
-			.close();
+			.login("Automation", "tryton");
 	}
-	
-	@Test 
+
+	@Test
 	public void addUser() {
 		loginPage = new LoginPO (driver);
 		closeTest = new CloseTest (driver);
-		
+		//Test
 		loginPage
-			.login("Automation", "tryton") 
+			.login("Automation", "tryton")
 			.user() //Navigation
 			.data("Fernando","Auto", "tryton123", "fernando@gmail.com"); //Test Data
-		
-		closeTest
-			.close();
 	}
 	
-	
-	@Test
+	@Test 
 	public void modifyUser() {
-		loginPage = new LoginPO(driver);
-		closeTest = new CloseTest(driver);
+		loginPage = new LoginPO (driver);
+		closeTest = new CloseTest (driver);
+		//Test
+		loginPage
+			.loginAddUser("Automation", "tryton") //Login
+			.modifyUser(); //CheckUser Created
 	}
-	
-	@Test
-	public void addEntity() {
-		loginPage = new LoginPO(driver);
-		closeTest = new CloseTest(driver);
-	}
-	
-	@Test
-	public void deleteEntity() {
-		loginPage = new LoginPO(driver);
-		closeTest = new CloseTest(driver);
-	}
-	
-	@Test
-	public void modifyEntity() {
-		loginPage = new LoginPO(driver);
-		closeTest = new CloseTest(driver);
-	}
-	
 
 	@Before
 	public void setUp() {
@@ -89,6 +63,8 @@ public class TestRunner {
 	
 	@After
 	public void teardDown() {
+		closeTest
+		.close();
 		driver.quit();
 	}
 	
